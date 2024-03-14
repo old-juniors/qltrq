@@ -13,10 +13,10 @@ WORKDIR /app
 # Copy the source code from the current directory to the Working Directory inside the container
 COPY . .
 
-# Initialize Go modules
-RUN go mod init github.com/old-juniors/qltrq
+# Initialize Go
+RUN go mod init qltrq-web
 
-# Download all dependencies. Dependencies will be cached if the go.mod and go.sum files are not changed
+# Download all dependencies.
 RUN go mod tidy
 
 # Build the Go app
