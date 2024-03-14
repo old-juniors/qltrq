@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JPRQ - The Tunneling Service</title>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism-tomorrow.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/prism.min.js"></script>
+    <style>
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+
+      pre[class*="language-"] {
+        position: relative;
+        overflow: auto;
+        font-size: 0.75rem;
+
+        /* make space  */
+        margin: 5px 0;
+        padding: 0.75rem;
+        border-radius: 10px;
+      }
+
+      pre[class*="language-"] button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+
+        font-size: 0.7rem;
+        padding: 0.15rem;
+        background-color: #828282;
+
+        border: ridge 1px #7b7b7c;
+        border-radius: 5px;
+        text-shadow: #c4c4c4 0 0 2px;
+      }
+
+      pre[class*="language-"] button:hover {
+        cursor: pointer;
+        background-color: #bcbabb;
+      }
+
+      main {
+        display: grid;
+        max-width: 666px;
+        margin: 20px auto;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+      }
+
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      h3 {
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div style="text-align: center">
+        <img
+          height="150"
+          src="https://telegra.ph/file/5c327e3dc4af04ed6db2a.png"
+        />
+        <h1>
+          <a href="https://github.com/azimjohn/jprq">jprq</a> - join public
+          router, quickly.
+        </h1>
+      </div>
+
+      <h3>Install / Update</h3>
+      <b>Unix based systems:</b>
+      <pre>$ <code class="language-sh">curl -fsSL https://qltrq.old-juniors.uz/install.sh | sudo bash</code></pre>
+
+      <b>Windows:</b>
+      <pre>$ <code class="language-sh">iex (New-Object Net.WebClient).DownloadString('https://qltrq.old-juniors.uz/install.ps1')</code></pre>
+
+      <h3>Authenticate</h3>
+      <p>
+        First obtain auth token from
+        <a href="https://qltrq.old-juniors.uz/auth" target="_blank"
+          >qltrq.old-juniors.uz/auth</a
+        >, then
+      </p>
+      <pre>$ <code class="language-sh">qltrq auth &lt;your-auth-token&gt;</code></pre>
+
+      <h3>Start http tunnel</h3>
+      <p>Replace 3000 with the port you want to expose</p>
+      <pre>$ <code class="language-sh">qltrq http 3000</code></pre>
+
+      <h3>Start tcp tunnel</h3>
+      <p>For exposing any TCP servers, such as SSH</p>
+      <pre>$ <code class="language-sh">qltrq tcp 22</code></pre>
+
+      <h3>Start http tunnel with custom subdomain</h3>
+      <p>Replace "custom" with the subdomain you want</p>
+      <pre>$ <code class="language-sh">qltrq http 3000 -s custom</code></pre>
+
+      <h3>Serve static files with built-in HTTP Server</h3>
+      <p>Replace "." with any directory to serve</p>
+      <pre>$ <code class="language-sh">qltrq serve .</code></pre>
+
+      <h3>Debug http tunnels with jprq debugger</h3>
+      <p>Debug dashboard URL will show up in output</p>
+      <pre>$ <code class="language-sh">qltrq http 3000 --debug</code></pre>
+
+      <h3>Serve on a different domain using CNAME</h3>
+      <p>
+        Replace example.com with your own domain <br />Domain should have CNAME
+        record pointing to your jprq.app to work
+      </p>
+      <pre>$ <code class="language-sh">qltrq http 3000 --cname example.com</code></pre>
+    </main>
+
+    <script>
+      const copyButtonLabel = "Copy";
+      let blocks = document.querySelectorAll("pre");
+
+      blocks.forEach((block) => {
+        if (navigator.clipboard) {
+          let button = document.createElement("button");
+          button.innerText = copyButtonLabel;
+          block.appendChild(button);
+          button.addEventListener("click", async () => {
+            await copyCode(block, button);
+          });
+        }
+      });
+
+      async function copyCode(block, button) {
+        let code = block.querySelector("code");
+        let text = code.innerText;
+        await navigator.clipboard.writeText(text);
+        button.innerText = "Copied";
+        setTimeout(() => {
+          button.innerText = copyButtonLabel;
+        }, 700);
+      }
+    </script>
+  </body>
+</html>
