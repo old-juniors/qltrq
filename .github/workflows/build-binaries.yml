@@ -1,0 +1,23 @@
+on:
+  release:
+    types: [created]
+
+jobs:
+  releases-matrix:
+    name: Release Go Binary
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        goos: [linux, windows, darwin]
+        goarch: ["386", amd64, arm64, arm]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: wangyoucao577/go-release-action@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          goos: ${{ matrix.goos }}
+          goarch: ${{ matrix.goarch }}
+          project_path: cli
+          md5sum: false
+          ldflags: -s
+          asset_name: qltrq-${{ matrix.goos }}-${{ matrix.goarch }}
