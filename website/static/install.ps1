@@ -16,7 +16,7 @@ if (-not (Test-Path -Path $INSTALL_DIR)) {
     }
 }
 
-# Download qltrq from releases for detected processor arch.
+# Download qltrq from releases for detected processor arch
 try {
     Write-Host "Downloading $FILENAME from GitHub releases"
     Invoke-WebRequest -Uri "$URL_PREFIX/$FILENAME" -OutFile "$INSTALL_DIR\qltrq.exe" -UseBasicParsing -ErrorAction Stop
