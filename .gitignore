@@ -1,0 +1,16 @@
+.idea
+.DS_Store
+vendor/
+package.json
+
+# binaries
+bin/
+cli/jprq
+server/jprq-server
+website/jprq-website
+cli/web/static/jsconfig.json
+website/ssh/jprq-ssh
+
+# prod
+jprq.service
+.env
