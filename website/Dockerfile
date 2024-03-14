@@ -26,4 +26,5 @@ RUN go build -o main .
 EXPOSE 3300
 
 # Command to run the executable
-CMD ["./main"]
+RUN chmod +x ./entrypoint.sh
+ENTRYPOINT ["sh", "entrypoint.sh"]
