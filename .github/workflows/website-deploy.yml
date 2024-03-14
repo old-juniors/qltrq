@@ -20,8 +20,6 @@ jobs:
           cwd: "./"
           files: |
             website/
-            go.mod
-            go.sum
           outPath: deploy.tar
 
       - name: Deploy App to CapRover
