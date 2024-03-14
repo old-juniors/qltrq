@@ -1,5 +1,5 @@
-# Start from a Debian-based image with the latest version of Go installed
-FROM golang:latest
+# Start from a Debian-based image with the 1.22 version of Go installed
+FROM golang:1.22
 
 # Set necessary environment variables
 ENV GO111MODULE=on \
