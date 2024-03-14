@@ -1,9 +1,7 @@
-<a href="https://github.com/azimjohn/jprq">
-  <p align="center">
-    <img height="140" src="./website/static/banner-dark.png#gh-light-mode-only">
-    <img height="140" src="./website/static/banner-light.png#gh-dark-mode-only">
-  </p>
-</a>
+<p align="center">
+  <img height="140" src="./website/static/banner-dark.png#gh-light-mode-only">
+  <img height="140" src="./website/static/banner-light.png#gh-dark-mode-only">
+</p>
 
 ## What's JPRQ ?
 
