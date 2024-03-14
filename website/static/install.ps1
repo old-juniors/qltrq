@@ -2,7 +2,7 @@ $URL_PREFIX = "https://github.com/old-juniors/qltrq/releases/download/2.3"
 $INSTALL_DIR = "$env:ProgramFiles\jprq"
 $FILENAME = "qltrq-windows-$(if ((Get-WmiObject -Class Win32_Processor).AddressWidth -eq 64) { 'amd64' } else { '386' }).exe"
 
-Write-Host "Started installing qltrq..."
+Write-Host "Started installing qltrq ..."
 
 # Create the installation directory if it doesn't exist
 if (-not (Test-Path -Path $INSTALL_DIR)) {
