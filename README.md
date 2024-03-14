@@ -17,8 +17,8 @@
 
 ## How to install ?
 
-- [Windows](./install/readme.md#windows)
-- [MacOs and Linux](./install/readme.md#macos-and-linux)
+- [Windows](./install/README.md#windows)
+- [MacOs and Linux](./install/README.md#macos-and-linux)
 
 ## How to use ?
 
