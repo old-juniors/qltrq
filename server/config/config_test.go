@@ -9,6 +9,8 @@ func TestConfig_Load(t *testing.T) {
 	t.Setenv("JPRQ_DOMAIN", "jprq.site")
 	t.Setenv("JPRQ_TLS_KEY", "key.pem")
 	t.Setenv("JPRQ_TLS_CERT", "cert.pem")
+	t.Setenv("GITHUB_CLIENT_ID", "id")
+	t.Setenv("GITHUB_CLIENT_SECRET", "secret")
 
 	config := &Config{}
 	err := config.Load()
