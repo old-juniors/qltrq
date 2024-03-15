@@ -32,3 +32,4 @@ jobs:
           md5sum: false
           ldflags: -s
           asset_name: qltrq-${{ matrix.goos }}-${{ matrix.goarch }}
+          compress_assets: off
