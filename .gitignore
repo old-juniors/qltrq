@@ -14,3 +14,6 @@ website/ssh/jprq-ssh
 # prod
 jprq.service
 .env
+
+# idk
+build.sh
